@@ -3,12 +3,10 @@ import java.sql.*;
 public class Main {
 
     public static void main(String[] args) {
-
+//Conexion a una base de datos
         String url="jdbc:oracle:thin:@localhost:1521:xe";
         String user="USUARIO";
         String password="ribera";
-
-
         try (Connection conn = DriverManager.getConnection(url, user, password)) {
 
             // Consulta SQL
@@ -26,6 +24,7 @@ public class Main {
 
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery(sql);
+            //Resultado en consola
             System.out.println("=== CLASIFICACIÓN GENERAL ===");
 
             while (rs.next()) {
